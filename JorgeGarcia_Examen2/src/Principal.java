@@ -27,6 +27,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         initComponents();
         tripulacion = new ArrayList();
+        expediciones = new ArrayList();
         ap = new adminPlanetas("./Planetas.pln");
         ap.cargarArchivo();
         cargarPlanetas(ap);
@@ -65,6 +66,26 @@ public class Principal extends javax.swing.JFrame {
         rb_f1 = new javax.swing.JRadioButton();
         jLabel32 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jd_modP = new javax.swing.JDialog();
+        jPanel10 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        tf_nameP1 = new javax.swing.JTextField();
+        ta_superficie1 = new javax.swing.JTextField();
+        ta_temp1 = new javax.swing.JTextField();
+        tf_distancia1 = new javax.swing.JTextField();
+        jb_crearP1 = new javax.swing.JButton();
+        cb_anillos1 = new javax.swing.JCheckBox();
+        jLabel41 = new javax.swing.JLabel();
+        pp_P = new javax.swing.JPopupMenu();
+        jmi_editarP = new javax.swing.JMenuItem();
+        jmi_elminarP = new javax.swing.JMenuItem();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -279,11 +300,154 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel31.setText("jLabel31");
 
+        jPanel10.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setText("Nombre");
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel34.setText("Superficie");
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel35.setText("Temperatura");
+
+        jLabel36.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel36.setText("Anillos");
+
+        jLabel37.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel37.setText("Distancia");
+
+        jb_crearP1.setText("Salvar");
+        jb_crearP1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_crearP1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
+        jPanel10.setLayout(jPanel10Layout);
+        jPanel10Layout.setHorizontalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel34)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_nameP1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ta_superficie1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(82, 82, 82)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel37)
+                        .addGap(116, 116, 116))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jLabel36)
+                        .addContainerGap())
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(cb_anillos1)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jb_crearP1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(23, 23, 23))
+                            .addGroup(jPanel10Layout.createSequentialGroup()
+                                .addComponent(ta_temp1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tf_distancia1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())))))
+        );
+        jPanel10Layout.setVerticalGroup(
+            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel10Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel33)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel37))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_nameP1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ta_temp1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_distancia1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel34)
+                            .addComponent(jLabel36))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ta_superficie1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_anillos1)))
+                    .addComponent(jb_crearP1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        jLabel41.setText("Modificar Planeta");
+
+        javax.swing.GroupLayout jd_modPLayout = new javax.swing.GroupLayout(jd_modP.getContentPane());
+        jd_modP.getContentPane().setLayout(jd_modPLayout);
+        jd_modPLayout.setHorizontalGroup(
+            jd_modPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modPLayout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(jLabel41)
+                .addContainerGap(436, Short.MAX_VALUE))
+            .addGroup(jd_modPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_modPLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jd_modPLayout.setVerticalGroup(
+            jd_modPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_modPLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel41)
+                .addContainerGap(190, Short.MAX_VALUE))
+            .addGroup(jd_modPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jd_modPLayout.createSequentialGroup()
+                    .addGap(31, 31, 31)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(51, Short.MAX_VALUE)))
+        );
+
+        jmi_editarP.setText("Editar");
+        jmi_editarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_editarPActionPerformed(evt);
+            }
+        });
+        pp_P.add(jmi_editarP);
+
+        jmi_elminarP.setText("Eliminar");
+        jmi_elminarP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_elminarPActionPerformed(evt);
+            }
+        });
+        pp_P.add(jmi_elminarP);
+
+        jLabel38.setText("jLabel38");
+
+        jLabel39.setText("jLabel39");
+
+        jLabel40.setText("jLabel40");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Verdana", 3, 36)); // NOI18N
         jLabel1.setText("NASA");
 
+        jLabel25.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel25.setText("Naves");
 
         jb_expedicion.setText("Enviar a Expedicion");
@@ -300,25 +464,26 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(jLabel25))
+                        .addGap(265, 265, 265)
+                        .addComponent(cb_naves, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jb_expedicion)
-                            .addComponent(cb_naves, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(559, Short.MAX_VALUE))
+                        .addGap(333, 333, 333)
+                        .addComponent(jb_expedicion))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(359, 359, 359)
+                        .addComponent(jLabel25)))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(50, 50, 50)
                 .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(cb_naves, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(32, 32, 32)
                 .addComponent(jb_expedicion, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(229, Short.MAX_VALUE))
+                .addContainerGap(162, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Expediciones", jPanel1);
@@ -825,6 +990,11 @@ public class Principal extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
+        jt_P.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_PMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jt_P);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -990,7 +1160,13 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_crearNMouseClicked
 
     private void jb_expedicionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_expedicionMouseClicked
-        // TODO add your handling code here:
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cb_naves.getModel();
+        Expedicion ex = new Expedicion((Nave)model.getSelectedItem(), (Planeta)((Nave)model.getSelectedItem()).getDestino());
+        expediciones.add(ex);
+        model.removeElement(model.getSelectedItem());
+        
+        ex.setRunning(true);
+        ex.start();
     }//GEN-LAST:event_jb_expedicionMouseClicked
 
     private void jb_crearN1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearN1MouseClicked
@@ -998,15 +1174,19 @@ public class Principal extends javax.swing.JFrame {
             Nave n = new Sonda(
                     this.tf_material.getText(),
                     Float.parseFloat(tf_pesoN.getText()),
-                    tf_noSerie.getText(),
-                    (Planeta) cb_planeta.getModel().getSelectedItem(),
-                    Float.parseFloat(tf_velocidad.getText())
+                    tf_noSerie1.getText(),
+                    (Planeta) cb_planeta2.getModel().getSelectedItem(),
+                    Float.parseFloat(tf_velocidad1.getText())
             );
+            System.out.println( Float.parseFloat(tf_velocidad1.getText()));
+            System.out.println(n.calcularTiempo()[0]);
+            System.out.println(n.calcularTiempo()[1]);
             DefaultComboBoxModel model = (DefaultComboBoxModel) cb_naves.getModel();
             model.addElement(n);
             cb_naves.setModel(model);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Ocurrio un error");
+            e.printStackTrace();
         }
     }//GEN-LAST:event_jb_crearN1MouseClicked
 
@@ -1064,16 +1244,16 @@ public class Principal extends javax.swing.JFrame {
                 seleccionado_a.setPeso(Float.parseFloat(tf_peso1.getText()));
 
                 DefaultTableModel model2 = (DefaultTableModel) jt_A.getModel();
-                for (int i=0 ; i < model2.getRowCount(); i++){
+                for (int i = 0; i < model2.getRowCount(); i++) {
                     model2.removeRow(i);
                 }
                 for (Astronauta a : aa.getAstronautas()) {
                     Object[] newrow = {
-                        seleccionado_a,
-                        seleccionado_a.getSueldo(),
-                        seleccionado_a.getNacionalidad(),
-                        seleccionado_a.getSexo(),
-                        seleccionado_a.getPeso()
+                        a,
+                        a.getSueldo(),
+                        a.getNacionalidad(),
+                        a.getSexo(),
+                        a.getPeso()
 
                     };
                     model2.addRow(newrow);
@@ -1098,6 +1278,89 @@ public class Principal extends javax.swing.JFrame {
         jd_modA.pack();
         jd_modA.setVisible(true);
     }//GEN-LAST:event_jmi_editarActionPerformed
+
+    private void jmi_elminarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_elminarPActionPerformed
+        DefaultTableModel model2 = (DefaultTableModel) jt_P.getModel();
+        model2.removeRow(row_a);
+        jt_P.setModel(model2);
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cb_planeta.getModel();
+        model.removeElement(seleccionado_p);
+        cb_planeta.setModel(model);
+        model = (DefaultComboBoxModel) cb_planeta2.getModel();
+        model.removeElement(seleccionado_p);
+        cb_planeta2.setModel(model);
+        ap.getPlanetas().remove(seleccionado_p);
+        try {
+            ap.escribirArchivo();
+        } catch (IOException ex) {
+            Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jmi_elminarPActionPerformed
+
+    private void jt_PMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_PMouseClicked
+        if (evt.isMetaDown()) {
+            row_a = jt_P.getSelectedRow();
+            DefaultComboBoxModel model = (DefaultComboBoxModel) cb_planeta.getModel();
+            Planeta p = (Planeta) model.getElementAt(row_a);
+            System.out.println(p);
+            seleccionado_p = p;
+            pp_P.show(evt.getComponent(), evt.getX(), evt.getY());
+
+        }
+    }//GEN-LAST:event_jt_PMouseClicked
+
+    private void jb_crearP1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_crearP1MouseClicked
+        if (!tf_nameP1.getText().equals("") && !tf_distancia1.getText().equals("")
+                && !this.ta_superficie1.getText().equals("") && !this.ta_temp1.getText().equals("")) {
+            try {
+                String anillos;
+                boolean a = false;
+                if (cb_anillos.isSelected()) {
+                    anillos = "Si";
+                    a = true;
+                } else {
+                    anillos = "No";
+                }
+                seleccionado_p.setName(tf_nameP1.getText());
+                seleccionado_p.setSuperficie(ta_superficie1.getText());
+                seleccionado_p.setAnillos(a);
+                seleccionado_p.setTemperatura(Float.parseFloat(ta_temp1.getText()));
+                seleccionado_p.setDistancia(Integer.parseInt(tf_distancia1.getText()));
+
+                DefaultTableModel model2 = (DefaultTableModel) jt_P.getModel();
+                for (int i = 0; i < model2.getRowCount(); i++) {
+                    model2.removeRow(i);
+                }
+                for (Planeta p : ap.getPlanetas()) {
+                    Object[] newrow = {
+                        p,
+                        p.getTemperatura(),
+                        p.getSuperficie(),
+                        p.isAnillos(),
+                        p.getDistancia()
+
+                    };
+                    model2.addRow(newrow);
+                }
+                jt_P.setModel(model2);
+
+                ap.escribirArchivo();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Ocurrio un error!");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Hay campos vacios!");
+        }
+    }//GEN-LAST:event_jb_crearP1MouseClicked
+
+    private void jmi_editarPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_editarPActionPerformed
+        tf_nameP1.setText(seleccionado_p.getName());
+        ta_temp1.setText(seleccionado_p.getTemperatura() + "");
+        tf_distancia1.setText(seleccionado_p.getDistancia() + "");
+        ta_superficie1.setText(seleccionado_p.getSuperficie() + "");
+        jd_modP.pack();
+        jd_modP.setVisible(true);
+    }//GEN-LAST:event_jmi_editarPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1138,6 +1401,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JMenu Menu_A;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JCheckBox cb_anillos;
+    private javax.swing.JCheckBox cb_anillos1;
     private javax.swing.JComboBox<String> cb_astronautas;
     private javax.swing.JComboBox<String> cb_naves;
     private javax.swing.JComboBox<String> cb_planeta;
@@ -1168,13 +1432,23 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -1192,13 +1466,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jb_crearN;
     private javax.swing.JButton jb_crearN1;
     private javax.swing.JButton jb_crearP;
+    private javax.swing.JButton jb_crearP1;
     private javax.swing.JButton jb_expedicion;
     private javax.swing.JDialog jd_modA;
+    private javax.swing.JDialog jd_modP;
     private javax.swing.JMenuItem jmi_editar;
+    private javax.swing.JMenuItem jmi_editarP;
     private javax.swing.JMenuItem jmi_eliminar;
+    private javax.swing.JMenuItem jmi_elminarP;
     private javax.swing.JTable jt_A;
     private javax.swing.JTable jt_P;
     private javax.swing.JPopupMenu pp_A;
+    private javax.swing.JPopupMenu pp_P;
     private javax.swing.JRadioButton rb_f;
     private javax.swing.JRadioButton rb_f1;
     private javax.swing.JRadioButton rb_m;
@@ -1208,13 +1487,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextField ta_sueldo;
     private javax.swing.JTextField ta_sueldo1;
     private javax.swing.JTextField ta_superficie;
+    private javax.swing.JTextField ta_superficie1;
     private javax.swing.JTextField ta_temp;
+    private javax.swing.JTextField ta_temp1;
     private javax.swing.JTextField tf_distancia;
+    private javax.swing.JTextField tf_distancia1;
     private javax.swing.JTextField tf_lugarD;
     private javax.swing.JTextField tf_material;
     private javax.swing.JTextField tf_nameA;
     private javax.swing.JTextField tf_nameA1;
     private javax.swing.JTextField tf_nameP;
+    private javax.swing.JTextField tf_nameP1;
     private javax.swing.JTextField tf_noSerie;
     private javax.swing.JTextField tf_noSerie1;
     private javax.swing.JTextField tf_peso;
@@ -1225,7 +1508,9 @@ public class Principal extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 ArrayList<Astronauta> tripulacion;
     Astronauta seleccionado_a;
+    Planeta seleccionado_p;
     int row_a;
+    ArrayList<Expedicion> expediciones;
 
     public void cargarPlanetas(adminPlanetas ap) {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cb_planeta.getModel();
